@@ -15,11 +15,11 @@ int largest;
 
 largest = a;
 
-if(b > largest)
+if (b > largest)
 {
 largest = b;
 }
-if(c > largest)
+if( c > largest)
 {
 largest = c;
 }
