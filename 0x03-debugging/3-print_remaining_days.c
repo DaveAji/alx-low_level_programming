@@ -12,10 +12,25 @@
 
 void print_remaining_days(int month, int day, int year)
 {
-    bool leap;
-
-    leap = checkYear(year);
-    if (leap == true)
+    int leap = 0;
+    
+    if (year % 4 == 0)
+    {
+        leap = 1;
+    }
+    else if (year % 100 == 0)
+    {
+        leap = 0;
+    }
+    else if (year % 4 == 0)
+    {
+        leap = 1;
+    }
+    else
+    {
+        leap = 0;
+    }
+    if (leap == 1)
     {
         if (month >= 2 && day >= 60)
         {
@@ -37,20 +52,4 @@ void print_remaining_days(int month, int day, int year)
             printf("Remaining days: %d\n", 365 - day);
         }
     }
-}
-bool checkYear(int year)
-{
-    if (year % 400 == 0)
-    {
-        return (true);
-    }      
-    if (year % 100 == 0)
-    {
-        return (false);
-    }
-    if (year % 4 == 0)
-    {
-        return (true);
-    }
-    return (false);
 }
