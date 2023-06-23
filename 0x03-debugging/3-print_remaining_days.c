@@ -41,10 +41,16 @@ void print_remaining_days(int month, int day, int year)
 bool checkYear(int year)
 {
     if (year % 400 == 0)
-        return true;
+    {
+        return (true);
+    }      
     if (year % 100 == 0)
-        return false;
+    {
+        return (false);
+    }
     if (year % 4 == 0)
-        return true;
-    return false;
+    {
+        return (true);
+    }
+    return (false);
 }
