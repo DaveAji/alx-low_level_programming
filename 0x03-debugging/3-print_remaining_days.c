@@ -12,19 +12,23 @@
 
 void print_remaining_days(int month, int day, int year)
 {
+
 int leap = 0;
 
 if (year % 400 == 0)
 {
 leap = 1;
+break;
 }
-if (year % 100 == 0)
+else if (year % 100 == 0)
 {
 leap = 0;
+break;
 }
-if (year % 4 == 0)
+else if (year % 4 == 0)
 {
 leap = 1;
+break;
 }
 if(leap == 1)
 {
