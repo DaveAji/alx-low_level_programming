@@ -1,30 +1,22 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * print_to_98 - function that prints all natural numbers from n to 98, followed by a new line.
- * Numbers must be separated by a comma, followed by a space
- * Numbers should be printed in order
- * The first printed number should be the number passed to your function
- * The last printed number should be 98
- * You are allowed to use the standard library
+ * print_to_98 - prints all natural numbers from n to 98
+ *
+ * @n: starting point
+ *
+ * Return: returns nothing
+ *
  */
 void print_to_98(int n)
 {
-	int i;
-
-	for (i = n; i <= 98; i++)
+	if (n <= 98)
 	{
-	if (i == 98)
-	{
-		_putchar(i + '0');
+		for (n = n; n <= 97; n++)
+			printf("%d, ", n);
 	}
 	else
-	{
-	_putchar(i + '0');
-	_putchar(',');
-   	_putchar(' ');
-	}
-	}
-	_putchar ('\n');
-
+		for (n = n; n > 98; n--)
+			printf("%d, ", n);
+	printf("98\n");
 }
