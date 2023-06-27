@@ -1,38 +1,31 @@
 #include <stdio.h>
-
 /**
-* main -The  a,b and c variables 
+*main - Prints all combinations of two two digits with,
+* and space followed by new line
 *
-* Return: print to stdout all the different combinations of three digits
-**/
+*Return: returns 0
+*/
 int main(void)
 {
-int a = 0;
-int b;
+	int digit1, digit2;
 
-while (a <= 98)
-{
-b = a + 1;
-while (b <= 99)
-{
-putchar(a / 10 % 10 + '0');
-putchar(a % 10 + '0');
-putchar(' ');
-putchar(b / 10 % 10 + '0');
-putchar(b % 10 + '0');
-if (a == 98 && b == 99)
-{
-putchar('\n');
-}
-else
-{
-putchar(',');
-putchar(' ');
-}
-b++;
-}
-a++;
-}
-return (0);
+	for (digit1 = 0; digit1 <= 98; digit1++)
+	{
+		for (digit2 = digit1 + 1; digit2 <= 99; digit2++)
+		{
+			putchar((digit1 / 10) + '0');
+			putchar((digit1 % 10) + '0');
+			putchar(32);
+			putchar((digit2 / 10) + '0');
+			putchar((digit2 % 10) + '0');
 
+			if (digit1 / 10 != 9 || digit1 % 10 != 8)
+			{
+				putchar(44);
+				putchar(32);
+			}
+		}
+	}
+	putchar(10);
+	return (0);
 }
